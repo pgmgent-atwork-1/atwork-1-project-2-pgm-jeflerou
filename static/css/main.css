@@ -1,0 +1,60 @@
+/* TODO fonts    (Lato, sans Serif) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+* footer
+*/
+
+footer {
+  margin: 2rem;
+}
+
+.subscribe p {
+  margin: 1rem 0;
+}
+
+.subscribe label {
+  display: block;
+}
+
+.subscribe input[type='email'] {
+  border: none;
+  background-color: rgb(207, 207, 207);
+  height: 2rem;
+}
+
+.subscribe input[type='button'] {
+  color: #FFF;
+  background-color: #000;
+  border: none;
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.socials ul {
+  list-style: none;
+  display: flex;
+}
+
+.socials li {
+  margin-right: 2rem;
+}
+
+.cookies {
+  padding: 1rem;
+  color: #FFF;
+  background-color: #000;
+  width: 60%;
+  margin-top: 0.5rem;
+}
+
+.cookies p {
+  margin: 0 auto;
+  width: 90%;
+}
