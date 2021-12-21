@@ -115,10 +115,16 @@ footer
 
 .subscribe p {
   margin: 1rem 0;
+  font-family: 'raleway 500';
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.5;
 }
 
 .subscribe label {
   display: block;
+  color: #878787;
+  margin-bottom: 0.5rem;
 }
 
 .subscribe input[type='email'] {
@@ -136,30 +142,42 @@ footer
 .subscribe input[type='button'] {
   color: #FFF;
   background-color: #000;
-  border: none;
+  border: 2px solid #000;
   display: block;
   margin-top: 0.5rem;
   padding: 1rem 2rem;
   font-family: 'raleway 600';
   font-weight: 600;
+  transition: 0.3s;
+}
+
+.subscribe input[type='button']:hover {
+  color: #000;
+  background-color: #FFF;
 }
 
 .footer_background {
   background: #000 url(https://gf20.qa.stad.gent/themes/custom/gf_theme/build/img/jpg/Gentse-feesten-01.jpg) 40% center no-repeat;
   background-size: cover;
-  height: 22rem;
+  height: 28rem;
 }
 
 .footer_background p {
   color: #FFF;
+  font-family: 'raleway 700';
+  font-weight: 700;
   font-size: 1.25rem;
+  margin-top: 6rem;
 }
 
 .footer_background .logo_container {
   padding: 2rem;
-  width: 90%;
   margin: 0 auto;
   background-color: #FFF;
+}
+
+.socials {
+  margin: 5rem 0;
 }
 
 .socials ul {
@@ -184,23 +202,40 @@ footer
   border-radius: 45%;
 }
 
-.socials a:hover ~ svg {
+.socials a:hover svg {
   fill:#FFF;
+}
+
+.socials a:hover .svg_container {
+  background-color:#000;
 }
 
 .disclaimer p {
   line-height: 1.5;
-  color: #6F6F6F
+  color: #6F6F6F;
+  font-size: 1.125rem;
+}
+
+.disclaimer img {
+  width: 4rem;
+  margin: 2rem 0;
 }
 
 .cookies {
   padding: 1rem;
   color: #FFF;
   background-color: #000;
+  border: 2px solid #000;
   width: 70%;
   margin-top: 0.5rem;
   margin-left: 1rem;
   margin-bottom: 1rem;
+  transition: 0.3s;
+}
+
+.cookies:hover {
+  color: #000;
+  background-color: #FFF;
 }
 
 .cookies p {
