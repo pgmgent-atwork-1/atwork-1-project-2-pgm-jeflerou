@@ -85,7 +85,7 @@ a {
 }
 
 form {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 strong {
@@ -140,6 +140,7 @@ footer
 }
 
 .subscribe input[type='button'] {
+  font-size: 1.125rem;
   color: #FFF;
   background-color: #000;
   border: 2px solid #000;
@@ -192,6 +193,7 @@ footer
 .socials svg {
   display: block;
   margin: auto;
+  transition: 0.4s;
 }
 
 .socials .svg_container {
@@ -200,6 +202,7 @@ footer
   padding: 0.25rem;
   background: #FFF ;
   border-radius: 45%;
+  transition: 0.4s;
 }
 
 .socials a:hover svg {
@@ -207,7 +210,7 @@ footer
 }
 
 .socials a:hover .svg_container {
-  background-color:#000;
+  background-color:#2b2b2b;
 }
 
 .disclaimer p {
@@ -217,7 +220,7 @@ footer
 }
 
 .disclaimer img {
-  width: 4rem;
+  width: 3.5rem;
   margin: 2rem 0;
 }
 
