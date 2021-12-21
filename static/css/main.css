@@ -1,4 +1,61 @@
-/* TODO fonts    (Lato, sans Serif) */
+/* 
+* fonts
+*/
+
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/raleway-v22-latin-regular.woff2') format('woff2'),
+  url('../fonts/raleway-v22-latin-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}
+
+
+@font-face {
+  font-family: 'raleway 500';
+  src: url('../fonts/raleway-v22-latin-500.woff2') format('woff2'),
+  url('../fonts/raleway-v22-latin-500.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}
+
+@font-face {
+  font-family: 'raleway 600';
+  src: url('../fonts/raleway-v22-latin-600.woff2') format('woff2'),
+  url('../fonts/raleway-v22-latin-600.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}
+
+@font-face {
+  font-family: 'raleway 700';
+  src: url('../fonts/raleway-v22-latin-700.woff2') format('woff2'),
+  url('../fonts/raleway-v22-latin-700.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}
+
+@font-face {
+  font-family: 'raleway 900';
+  src: url('../fonts/raleway-v22-latin-900.woff2') format('woff2'),
+  url('../fonts/raleway-v22-latin-900.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}
+
+/* 
+* element selectors
+*/
 
 * {
   margin: 0;
@@ -6,13 +63,55 @@
   box-sizing: border-box;
 }
 
-/* 
-* footer
+body {
+  font-size: 1rem;
+  font-family: 'raleway';
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-family: 'raleway 900';
+  font-weight: 900;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: underline;
+  color: #000;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+strong {
+  font-family: 'raleway 700';
+  font-weight: 700;
+}
+
+/*
+* utility classes
 */
 
-footer {
-  margin: 2rem;
+.layout-container {
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
+
+/* 
+* specific styling
+*/
+
+
+/* 
+footer
+*/
 
 .subscribe p {
   margin: 1rem 0;
@@ -23,9 +122,15 @@ footer {
 }
 
 .subscribe input[type='email'] {
+  width: 90%;
   border: none;
-  background-color: rgb(207, 207, 207);
-  height: 2rem;
+  background-color: #E9E9E9;
+  height: 3rem;
+}
+
+.subscribe input[type='email']:focus {
+  border: 2px dotted red;
+  outline: none;
 }
 
 .subscribe input[type='button'] {
@@ -34,7 +139,27 @@ footer {
   border: none;
   display: block;
   margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
+  font-family: 'raleway 600';
+  font-weight: 600;
+}
+
+.footer_background {
+  background: #000 url(https://gf20.qa.stad.gent/themes/custom/gf_theme/build/img/jpg/Gentse-feesten-01.jpg) 40% center no-repeat;
+  background-size: cover;
+  height: 22rem;
+}
+
+.footer_background p {
+  color: #FFF;
+  font-size: 1.25rem;
+}
+
+.footer_background .logo_container {
+  padding: 2rem;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #FFF;
 }
 
 .socials ul {
@@ -46,15 +171,41 @@ footer {
   margin-right: 2rem;
 }
 
+.socials svg {
+  display: block;
+  margin: auto;
+}
+
+.socials .svg_container {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.25rem;
+  background: #FFF ;
+  border-radius: 45%;
+}
+
+.socials a:hover ~ svg {
+  fill:#FFF;
+}
+
+.disclaimer p {
+  line-height: 1.5;
+  color: #6F6F6F
+}
+
 .cookies {
   padding: 1rem;
   color: #FFF;
   background-color: #000;
-  width: 60%;
+  width: 70%;
   margin-top: 0.5rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 .cookies p {
   margin: 0 auto;
-  width: 90%;
+  width: 95%;
+  font-family: 'raleway 600';
+  font-weight: 600;
 }
