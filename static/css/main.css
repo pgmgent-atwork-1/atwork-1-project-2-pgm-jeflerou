@@ -2,6 +2,8 @@
 * fonts
 */
 
+/* TODO check slides might need to rename font-families */
+
 @font-face {
   font-family: 'raleway';
   src: url('../fonts/raleway-v22-latin-regular.woff2') format('woff2'),
@@ -107,6 +109,16 @@ strong {
 /* 
 * specific styling
 */
+
+/* 
+header
+*/
+
+#header {
+  height: 20rem;
+  background-size: cover;
+  background-position: 50% 50%;
+}
 
 
 /* 
