@@ -16,7 +16,7 @@
 
 
 @font-face {
-  font-family: 'raleway 500';
+  font-family: 'raleway';
   src: url('../fonts/raleway-v22-latin-500.woff2') format('woff2'),
   url('../fonts/raleway-v22-latin-500.woff') format('woff');
   font-weight: 500;
@@ -26,7 +26,7 @@
 }
 
 @font-face {
-  font-family: 'raleway 600';
+  font-family: 'raleway';
   src: url('../fonts/raleway-v22-latin-600.woff2') format('woff2'),
   url('../fonts/raleway-v22-latin-600.woff') format('woff');
   font-weight: 600;
@@ -36,7 +36,7 @@
 }
 
 @font-face {
-  font-family: 'raleway 700';
+  font-family: 'raleway';
   src: url('../fonts/raleway-v22-latin-700.woff2') format('woff2'),
   url('../fonts/raleway-v22-latin-700.woff') format('woff');
   font-weight: 700;
@@ -46,7 +46,7 @@
 }
 
 @font-face {
-  font-family: 'raleway 900';
+  font-family: 'raleway';
   src: url('../fonts/raleway-v22-latin-900.woff2') format('woff2'),
   url('../fonts/raleway-v22-latin-900.woff') format('woff');
   font-weight: 900;
@@ -73,12 +73,13 @@ body {
 
 h2 {
   font-size: 1.875rem;
-  font-family: 'raleway 900';
+  font-family: 'raleway';
   font-weight: 900;
 }
 
 img {
   width: 100%;
+  display: block;
 }
 
 a {
@@ -91,8 +92,15 @@ form {
 }
 
 strong {
-  font-family: 'raleway 700';
+  font-family: 'raleway';
   font-weight: 700;
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-family: 'raleway';
+  font-weight: 500;
 }
 
 /*
@@ -101,7 +109,7 @@ strong {
 
 .layout-container {
   width: 100%;
-  max-width: 50rem;
+  max-width: 72rem;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -114,10 +122,17 @@ strong {
 header
 */
 
-#header {
-  height: 20rem;
+.header_background {
+  height: 75vh;
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: 40%;
+  display: none;
+}
+
+@media only screen and (min-width: 50rem) {
+  .header_background {
+    display: block;
+  }
 }
 
 
@@ -127,10 +142,7 @@ footer
 
 .subscribe p {
   margin: 1rem 0;
-  font-family: 'raleway 500';
-  font-weight: 500;
   font-size: 1.125rem;
-  line-height: 1.5;
 }
 
 .subscribe label {
@@ -159,14 +171,28 @@ footer
   display: block;
   margin-top: 0.5rem;
   padding: 1rem 2rem;
-  font-family: 'raleway 600';
+  font-family: 'raleway';
   font-weight: 600;
   transition: 0.3s;
+}
+
+@media only screen and (min-width: 37rem) {
+  .subscribe input[type='button'] {
+    margin-top: 0;
+    height: 3rem;
+    padding: 0.75rem 2rem;
+  }
 }
 
 .subscribe input[type='button']:hover {
   color: #000;
   background-color: #FFF;
+}
+
+@media only screen and (min-width: 37rem) {
+  .input_container {
+    display: flex;
+  }
 }
 
 .footer_background {
@@ -177,16 +203,27 @@ footer
 
 .footer_background p {
   color: #FFF;
-  font-family: 'raleway 700';
+  font-family: 'raleway';
   font-weight: 700;
   font-size: 1.25rem;
   margin-top: 6rem;
+  max-width: 28rem;
 }
 
-.footer_background .logo_container {
+@media only screen and (min-width: 48rem) {
+  .footer_background p {
+    font-size: 1.5rem;
+  }
+}
+
+.footer_background {
   padding: 2rem;
   margin: 0 auto;
   background-color: #FFF;
+}
+
+.logo_container {
+  max-width: 12rem;
 }
 
 .socials {
@@ -231,31 +268,43 @@ footer
   font-size: 1.125rem;
 }
 
+@media only screen and (min-width: 64rem) {
+  .disclaimer p {
+    max-width: 70%;
+    margin-top: 1rem;
+  }
+}
+
 .disclaimer img {
   width: 3.5rem;
   margin: 2rem 0;
 }
 
 .cookies {
+  font-size: 1rem;
+  font-family: 'raleway';
+  font-weight: 600;
   padding: 1rem;
+  max-width: 12rem;
   color: #FFF;
   background-color: #000;
   border: 2px solid #000;
   width: 70%;
   margin-top: 0.5rem;
-  margin-left: 1rem;
   margin-bottom: 1rem;
   transition: 0.3s;
 }
 
-.cookies:hover {
+.cookies:hover{
   color: #000;
   background-color: #FFF;
 }
 
-.cookies p {
-  margin: 0 auto;
-  width: 95%;
-  font-family: 'raleway 600';
-  font-weight: 600;
+
+@media only screen and (min-width: 64rem) {
+  .disclaimer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
 }
