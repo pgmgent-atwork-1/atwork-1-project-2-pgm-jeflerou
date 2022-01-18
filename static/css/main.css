@@ -71,6 +71,11 @@ body {
   font-weight: 400;
 }
 
+nav {
+  padding-top: 1rem;
+  align-items: flex-start;
+}
+
 h2 {
   font-size: 1.875rem;
   font-family: 'raleway';
@@ -114,6 +119,23 @@ p {
   padding: 0 1rem;
 }
 
+.logo_container {
+  max-width: 12rem;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: block;
+}
+
 /* 
 * specific styling
 */
@@ -122,19 +144,73 @@ p {
 header
 */
 
+.logo {
+  width: 12rem;
+}
+
+.ontdek svg path, polygon{
+  fill: #000;
+}
+
 .header_background {
   height: 75vh;
   background-size: cover;
   background-position: 40%;
-  display: none;
 }
 
-@media only screen and (min-width: 50rem) {
-  .header_background {
-    display: block;
-  }
+.header_menu {
+  width: 2rem;
+  background: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
+.days_container {
+  flex-wrap: wrap;
+}
+
+.days_container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.days_container li {
+  width: 20%;
+  list-style: none;
+  padding: 0.5rem;
+  background-color: #000;
+  color: #FFF;
+}
+
+.days_container li:hover {
+  background-color: #FFF;
+  color: #000;
+}
+
+.mobile-menu {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  z-index: 99999;
+  overflow-y: auto;
+}
+
+.mobile-menu li {
+  color: #FFF;
+}
+
+.mobile-menu svg {
+  fill: #FFF;
+}
+
+.mobile-menu a {
+  color: inherit;
+}
 
 /* 
 footer
@@ -156,7 +232,10 @@ footer
   border: none;
   background-color: #E9E9E9;
   height: 3rem;
+  padding-left: 0.5rem;
 }
+
+/* TODO make an active class because this is used very often on the site */
 
 .subscribe input[type='email']:focus {
   border: 2px dotted red;
@@ -176,7 +255,7 @@ footer
   transition: 0.3s;
 }
 
-@media only screen and (min-width: 37rem) {
+@media (min-width: 37rem) {
   .subscribe input[type='button'] {
     margin-top: 0;
     height: 3rem;
@@ -189,7 +268,7 @@ footer
   background-color: #FFF;
 }
 
-@media only screen and (min-width: 37rem) {
+@media (min-width: 37rem) {
   .input_container {
     display: flex;
   }
@@ -210,7 +289,7 @@ footer
   max-width: 28rem;
 }
 
-@media only screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .footer_background p {
     font-size: 1.5rem;
   }
@@ -220,10 +299,6 @@ footer
   padding: 2rem;
   margin: 0 auto;
   background-color: #FFF;
-}
-
-.logo_container {
-  max-width: 12rem;
 }
 
 .socials {
@@ -268,7 +343,7 @@ footer
   font-size: 1.125rem;
 }
 
-@media only screen and (min-width: 64rem) {
+@media (min-width: 64rem) {
   .disclaimer p {
     max-width: 70%;
     margin-top: 1rem;
@@ -301,7 +376,7 @@ footer
 }
 
 
-@media only screen and (min-width: 64rem) {
+@media (min-width: 64rem) {
   .disclaimer {
     display: flex;
     justify-content: space-between;

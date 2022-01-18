@@ -14,7 +14,7 @@
     },
 
     randomBackground() {
-      this.$header_background.style.backgroundImage = `url("https://gf20.qa.stad.gent/themes/custom/gf_theme/build/img/jpg/Gentse-feesten-0${Math.floor(Math.random() * 9)}.jpg")`;
+      this.$header_background.style.backgroundImage = `url("https://gf20.qa.stad.gent/themes/custom/gf_theme/build/img/jpg/Gentse-feesten-0${Math.floor(Math.random() * 8) + 1}.jpg")`;
     },
 
     async fetchNews() {
