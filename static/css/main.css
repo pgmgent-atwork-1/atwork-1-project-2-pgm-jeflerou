@@ -88,8 +88,12 @@ img {
 }
 
 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
   text-decoration: underline;
-  color: #000;
 }
 
 form {
@@ -106,6 +110,12 @@ p {
   line-height: 1.5;
   font-family: 'raleway';
   font-weight: 500;
+}
+
+button {
+  border: none;
+  background: inherit;
+  color: inherit;
 }
 
 /*
@@ -136,6 +146,18 @@ p {
   display: block;
 }
 
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.red-dots {
+  border: none;
+}
+
+.red-dots:active {
+  border: 2px dotted red;
+}
+
 /* 
 * specific styling
 */
@@ -143,6 +165,77 @@ p {
 /* 
 header
 */
+
+.chevron {
+  transition: 0.2s;
+}
+
+.close {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  transition: 0.2s;
+}
+
+.close:hover {
+  transform: rotate(180deg);
+}
+
+.mobile-menu a {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.mobile-menu ul {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  list-style: none;
+}
+
+.mobile-menu li {
+  margin-top: 1rem;
+}
+
+.mobile-menu li ul {
+  margin: 0;
+}
+
+.program {
+  display: flex;
+  font-size: 1.5rem;
+  font-family: 'raleway';
+  font-weight: 700;
+}
+
+.program:hover {
+  text-decoration: underline;
+}
+
+.program-menu-days {
+  border-left: 4px solid #FFF;
+  padding-left: 2rem;
+  margin-left: 0;
+}
+
+.program-menu:hover {
+  text-decoration: underline;
+}
+
+.search {
+  display: none;
+}
+
+.search-mobile {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 67rem) {
+  .search {
+    display: block;
+  }
+}
 
 .logo {
   width: 12rem;
@@ -152,13 +245,38 @@ header
   fill: #000;
 }
 
+@media (min-width: 67rem) {
+  .ontdek svg path, polygon {
+    fill: #FFF;
+  }
+}
+
+.ontdek {
+  width: 16rem;
+  padding: 1rem;
+}
+
+@media (min-width: 67rem) {
+  .ontdek {
+    position: absolute;
+    top: 10rem;
+    right: 10rem;
+  }
+}
+
 .header_background {
   height: 75vh;
   background-size: cover;
   background-position: 40%;
 }
 
-.header_menu {
+@media (min-width: 67rem) {
+  .header_background {
+    height: 90vh;
+  }
+}
+
+.header-menu {
   width: 2rem;
   background: inherit;
   border: none;
@@ -166,8 +284,45 @@ header
   cursor: pointer;
 }
 
+@media (min-width: 67rem) {
+  .header-menu {
+    display: none;
+  }
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: 67rem) {
+  .nav {
+    display: flex;
+    color: #FFF;
+    text-align: right;
+    width: 72rem;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 67rem) {
+  .nav li{
+    width: 8%;
+    list-style: none;
+  }
+}
+
 .days_container {
   flex-wrap: wrap;
+  padding: 0;
+}
+
+@media (min-width: 67rem) {
+  .days_container {
+    position: absolute;
+    top: 18rem;
+    right: 0;
+    width: 36rem;
+  }
 }
 
 .days_container a {
@@ -175,6 +330,11 @@ header
   color: inherit;
 }
 
+@media (min-width: 67rem) {
+  .days_container a {
+    font-size: 1.75rem;
+  }
+}
 
 .days_container li {
   width: 20%;
@@ -184,9 +344,31 @@ header
   color: #FFF;
 }
 
+@media (min-width: 47.5rem) {
+  .days_container li {
+    width: 10%;
+  }
+}
+
+@media (min-width: 67rem) {
+  .days_container li {
+    width: 20%;
+    background-color: #FFF;
+    color: #000;
+    padding: 0 2rem;
+  }
+}
+
 .days_container li:hover {
   background-color: #FFF;
   color: #000;
+}
+
+@media (min-width: 67rem) {
+  .days_container li:hover {
+    background-color: #000;
+    color: #FFF;
+  }
 }
 
 .mobile-menu {
