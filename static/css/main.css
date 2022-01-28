@@ -597,7 +597,7 @@ Image-over-page
 */
 
 .img-over-page {
-  background-image: url('static/media/background.jpg');
+  background-image: url('../media/background.jpg');
   padding-bottom: 40%;
   width: 100%;
   background-size: cover;
