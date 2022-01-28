@@ -575,6 +575,7 @@ News-button
 }
 
 .news-button {
+  width: 20rem;
   font-size: 1.125rem;
   color: #000;
   background-color: #FFF;
@@ -584,12 +585,13 @@ News-button
   font-family: 'raleway';
   font-weight: 600;
   transition: 0.3s;
-  margin: 2rem 1rem;
+  margin: 2rem 0;
 }
 
 .news-button:hover {
   background-color: #000;
   color: #FFF;
+  text-decoration: none;
 }
 
 /*
