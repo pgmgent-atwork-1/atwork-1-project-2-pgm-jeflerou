@@ -60,12 +60,6 @@
         this.$program_menu.classList.toggle('hidden');
         this.$chevron.classList.toggle('rotate-180')
       }, false);
-
-      // if(this.$buttons) {
-      //   this.$radio_buttons.addEventListener('click', e => {
-      //     console.log(e.target.value);
-      //   }, false);
-      // };
     },
 
     createSubNav() {
@@ -85,7 +79,6 @@
     getCurrentSlug() {
       const search = window.location.search;
       const params = new URLSearchParams(search);
-      console.log(params);
 
       if (params.has("slug")) {
         this.currentSlug = params.get("slug");
@@ -206,7 +199,6 @@
 
     eventsPerCategory(events) {
       return this.categories.map((category) => {
-        console.log(category)
         const selectedEvents = events.filter((event) => event.category.includes(category))
         selectedEvents.sort((event, previousEvent) => {
           if (previousEvent.sort_key > event.sort_key) {
@@ -244,7 +236,6 @@
 
     generateHtmlForEvents(events) {
       return events.map((event) => {
-        console.log(event);
         return `
         <li class='event-card'>
         <a href='events/detail.html?day${event.day}&slug=${event.slug}'></a>
