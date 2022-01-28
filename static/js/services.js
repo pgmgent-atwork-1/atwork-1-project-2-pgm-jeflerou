@@ -1,5 +1,5 @@
-class EventsApi {
-  static async getEvents() {
+function EventsApi () {
+  this.getEvents = async () => {
     try {
       const response = await fetch('https://www.pgm.gent/data/gentsefeesten/events.json');
       const data = await response.json();
@@ -7,11 +7,11 @@ class EventsApi {
     } catch {
       console.error('failed to retrieve events data ');
     }
-  }
+  };
 }
 
-class CategoriesApi {
-  static async getCategories() {
+function CategoriesApi () {
+  this.getCategories = async () => {
     try {
       const response = await fetch(' https://www.pgm.gent/data/gentsefeesten/categories.json');
       const data = await response.json();
@@ -22,12 +22,12 @@ class CategoriesApi {
   }
 }
 
-class NewsApi {
-  static async getNews() {
+function  NewsApi () {
+  this.getNews = async () => {
     try {
       const response = await fetch(' https://www.pgm.gent/data/gentsefeesten/news.json');
       const data = await response.json();
-      return
+      return data;
     } catch {
       console.error('failed to retrieve news data');
     }

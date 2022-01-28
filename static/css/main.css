@@ -69,6 +69,8 @@ body {
   font-size: 1rem;
   font-family: 'raleway';
   font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
 nav {
@@ -100,6 +102,10 @@ form {
   margin-bottom: 4rem;
 }
 
+ul {
+  list-style: none;
+}
+
 strong {
   font-family: 'raleway';
   font-weight: 700;
@@ -116,6 +122,21 @@ button {
   border: none;
   background: inherit;
   color: inherit;
+}
+
+select {
+  display: none;
+  height: 1rem;
+  color: #FFF;
+  background: #000;
+  border: none;
+  margin-left: 4rem;
+}
+
+@media (min-width: 67rem) {
+  select {
+    display: block;
+  }
 }
 
 /*
@@ -158,6 +179,15 @@ button {
   border: 2px dotted red;
 }
 
+.current {
+  text-decoration: underline;
+}
+
+.img-container {
+  overflow: hidden;
+  max-width: initial;
+}
+
 /* 
 * specific styling
 */
@@ -166,8 +196,14 @@ button {
 header
 */
 
+/* TODO need to make sure position absolute elements stay within layout-container */
+
 .chevron {
   transition: 0.2s;
+}
+
+.control_container {
+  display: flex;
 }
 
 .close {
@@ -225,16 +261,16 @@ header
   display: none;
 }
 
+@media (min-width: 67rem) {
+  .search {
+    display: flex;
+  }
+}
+
 .search-mobile {
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 0.5rem;
-}
-
-@media (min-width: 67rem) {
-  .search {
-    display: block;
-  }
 }
 
 .logo {
@@ -259,10 +295,26 @@ header
 @media (min-width: 67rem) {
   .ontdek {
     position: absolute;
-    top: 10rem;
-    right: 10rem;
+    width: 32rem;
+    top: -24.5rem;
+    right: 2rem;
+    display: flex;
   }
 }
+
+@media (min-width: 67rem) {
+  .ontdek-container {
+    position: relative;
+    width: 100%;
+  }
+}
+
+@media (min-width: 67rem) {
+  .ontdek svg:first-child{
+    transform: rotate(270deg);
+  }
+}
+
 
 .header_background {
   height: 75vh;
@@ -296,17 +348,28 @@ header
 
 @media (min-width: 67rem) {
   .nav {
+    position: absolute;
+    top: -3rem;
+    right: 2rem;
     display: flex;
     color: #FFF;
     text-align: right;
-    width: 72rem;
     justify-content: flex-end;
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 67rem) {
+  .nav-container {
+    position: relative;
+    width: 100%;
   }
 }
 
 @media (min-width: 67rem) {
   .nav li{
-    width: 8%;
+    margin: 0 1.5rem;
     list-style: none;
   }
 }
@@ -319,11 +382,18 @@ header
 @media (min-width: 67rem) {
   .days_container {
     position: absolute;
-    top: 18rem;
+    top: -18rem;
     right: 0;
     width: 36rem;
   }
 }
+
+@media (min-width: 67rem) {
+  .days-desktop {
+    position: relative;
+  }
+}
+
 
 .days_container a {
   text-decoration: none;
@@ -333,6 +403,12 @@ header
 @media (min-width: 67rem) {
   .days_container a {
     font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 67rem) {
+  .days_container a span {
+    font-size: 1rem;
   }
 }
 
@@ -355,7 +431,7 @@ header
     width: 20%;
     background-color: #FFF;
     color: #000;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
   }
 }
 
@@ -394,6 +470,312 @@ header
   color: inherit;
 }
 
+input[type=text] {
+  height: 2.5rem;
+  width: 16rem;
+}
+
+/*
+Article-card
+*/
+
+.article-date {
+  background-color: #FFF;
+  color: #000;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+}
+
+@media (min-width: 67rem) {
+  .article-date {
+    transform: rotate(270deg);
+    bottom: 33%;
+    left: -5%
+  }
+}
+
+.article-card {
+  position: relative;
+}
+
+
+@media (min-width: 67rem) {
+  .article-card {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+}
+
+.article-card .card-container {
+  position: relative;
+}
+
+@media (min-width: 67rem) {
+  .article-card .card-container {
+    width: 45%;
+  }
+}
+
+@media (min-width: 67rem) {
+  .article-card .card-info {
+    width: 45%;
+    margin-left: 10%;
+  }
+}
+
+.article-card h3 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.3rem;
+  font-weight: 900;
+}
+
+.article-card p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.article-card svg {
+  margin-bottom: 2rem;
+}
+
+.article-card a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+} 
+
+.article-card img {
+  transition: 0.5s;
+}
+
+.article-card a:hover ~ h3{
+  text-decoration: underline;
+}
+
+.article-card a:hover ~ div img{
+  transform: scale(1.1);
+  width: 100%;
+}
+
+/*
+News-button
+*/
+
+.news {
+  margin-top: 2rem;
+}
+
+.news-button {
+  font-size: 1.125rem;
+  color: #000;
+  background-color: #FFF;
+  border: 2px solid #000;
+  display: block;
+  padding: 1rem 2rem;
+  font-family: 'raleway';
+  font-weight: 600;
+  transition: 0.3s;
+  margin: 2rem 1rem;
+}
+
+.news-button:hover {
+  background-color: #000;
+  color: #FFF;
+}
+
+/*
+Image-over-page
+*/
+
+.img-over-page {
+  background-image: url('../media/background.jpg');
+  padding-bottom: 40%;
+  width: 100%;
+  background-size: cover;
+  margin-bottom: 4rem;
+}
+
+/*
+Event-card
+*/
+@media (min-width: 48rem) {
+  .events-home-page ul, .events ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+}
+
+@media (min-width: 48rem) {
+  .event-card {
+    width: 48%;
+  }
+}
+
+@media (min-width: 67rem) {
+  .event-card {
+    width: 30%;
+  }
+}
+
+.events .date .day{
+  display: none;
+}
+
+.events .event-card .date {
+  bottom: 25%;
+  left: 2rem;
+  width: fit-content;
+}
+
+.events-home-page ul {
+  margin-top: 4rem;
+}
+
+.event-card {
+  position: relative;
+  padding-bottom: 2rem;
+  overflow: hidden;
+}
+
+.event-card .image-container{
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.event-card h3 {
+  width: 16rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+  padding-left: 4.5rem;
+}
+
+.event-card p {
+  width: 16rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  padding-left: 4.5rem;
+}
+
+.event-card-background {
+  width: inherit;
+  max-width: 100%;
+  padding-bottom: 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 3rem;
+  transition: 0.4s;
+}
+
+.event-card .date {
+  position: absolute;
+  background-color: #000;
+  color: #FFF;
+  width: 20rem;
+  left: 4rem;
+  bottom: 10%;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.event-card a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+} 
+
+.event-card a:hover ~ div .event-card-background{
+  transform: scale(1.08);
+}
+
+/*
+sub-nav
+*/
+
+.filters {
+  padding-left: 1rem;
+}
+
+.filters .label {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid black;
+  margin-bottom: 1rem;
+}
+
+.currentLabel {
+  background-color: black;
+}
+
+.currentLabel svg{
+  fill: #FFF;
+}
+
+.filters .label:hover svg {
+  fill: #FFF;
+}
+
+.filters .label:hover {
+  background-color: black;
+}
+
+.filters .label svg{
+  width: 100%;
+  height: 100%;
+}
+
+.additional-menu {
+  width: 8rem;
+  margin-left: 1rem;
+}
+
+.wheelChair input, .free input {
+  width: 1rem;
+  height: 1rem;
+}
+
+.free input:hover {
+background-color: #000;
+}
+
+.wheelChair input:hover {
+  background-color: #000;
+}
+
+.sub-nav ul {
+  background-color: #000;
+  color: #FFF;
+  width: 75%;
+  margin-left: 15%;
+}
+
+.sub-nav li {
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+}
+
+.sub-nav a {
+  font-weight: 700;
+}
+
+.sub-nav {
+  overflow-wrap: break-word;
+}
+
 /* 
 footer
 */
@@ -417,7 +799,9 @@ footer
   padding-left: 0.5rem;
 }
 
-/* TODO make an active class because this is used very often on the site */
+/* 
+* find css for button home page here
+*/
 
 .subscribe input[type='email']:focus {
   border: 2px dotted red;
